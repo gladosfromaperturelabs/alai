@@ -83,7 +83,7 @@ passwd glados
 # Disable root user for security
 passwd -l root
 
-Autorun 20-firstboot.sh script next reboot
+#20-firstboot.sh script next reboot
 
 echo 'exec /alai-scripts/20-firstboot.sh' >> /home/glados/.bash_profile
 

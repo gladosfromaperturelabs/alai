@@ -14,8 +14,8 @@ ping -c 4 google.com
 sudo pacman -Syyu
 sudo pacman-optimize
 
-# Install Basic Plasma Desktop
-sudo pacman -S xorg-server plasma-desktop xdg-user-dirs nvidia plasma-nm konsole firefox qupzilla dolphin dolphin-plugins kate kcalc ark okular gwenview kimageformats kipi-plugins qt5-imageformats sddm sddm-kcm kde-gtk-config breeze-gtk pulseaudio plasma-pa --needed --noconfirm
+# Install Basic Plasma Desktop and Apps
+sudo pacman -S xorg-server plasma-desktop xdg-user-dirs nvidia plasma-nm konsole firefox qupzilla korganizer kmail kontact konversation spectacle qbittorrent dolphin dolphin-plugins kio-gdrive kaccounts-integration yakuake kate kcalc ark okular gwenview kimageformats kipi-plugins qt5-imageformats sddm sddm-kcm kde-gtk-config breeze-gtk pulseaudio plasma-pa --needed --noconfirm
 
 # Install some transtalations (Spanish)
 sudo pacman -S firefox-i18n-es-es qt5-translations hunspell-en hunspell-es --needed --noconfirm
