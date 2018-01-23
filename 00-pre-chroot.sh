@@ -67,7 +67,7 @@ mv /mnt/etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist.bak
 cp /etc/pacman.d/mirrorlist* /mnt/etc/pacman.d/
 
 # Copy ArchLinux AutoInstall Scripts
-curl -L --output aai-scripts.zip https://github.com/gladosfromaperturelabs/alai/archive/master.zip
+curl -L --output alai-scripts.zip https://github.com/gladosfromaperturelabs/alai/archive/master.zip
 mkdir /mnt/alai-scripts
 unzip -j alai-scripts.zip -d /mnt/alai-scripts
 chmod +x /mnt/alai-scripts/*
