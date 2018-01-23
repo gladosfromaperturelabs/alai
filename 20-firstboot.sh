@@ -35,6 +35,10 @@ echo 'POWERLINE_BASH_CONTINUATION=1' >> ~/.bashrc
 echo 'POWERLINE_BASH_SELECT=1' >> ~/.bashrc
 echo '. /usr/lib/python3.6/site-packages/powerline/bindings/bash/powerline.sh' >> ~/.bashrc
 
+# Enable SSDM and nVidia Services
+sudo systemctl enable sddm.service
+sudo systemctl enable nvidia-persistenced
+
 # Installing Trizen AUR Helper (pacaur is discontinued)
 cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
