@@ -40,7 +40,7 @@ sudo systemctl enable sddm.service
 sudo systemctl enable nvidia-persistenced
 
 # Installing Trizen AUR Helper (pacaur is discontinued)
-cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
+mkdir /tmp/trizen &&cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
 sudo pacman -S perl-json-xs perl-term-readline-gnu --noconfirm --needed
 
