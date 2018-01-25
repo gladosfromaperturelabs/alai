@@ -40,9 +40,9 @@ echo 'Storage=none' >> /etc/systemd/coredump.conf.d/custom.conf
 echo 'EDITOR=nano' >> /etc/environment
 
 # Configure SUDO
-sed 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers > /etc/sudoers.new
-EDITOR='cp /etc/sudoers.new' visudo
-rm /etc/sudoers.new
+sed 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers > /tmp/sudoers.new
+EDITOR='cp /tmp/sudoers.new' visudo
+
 
 # Configure Pacman
 sed -i 's/#Color/Color/g' /etc/pacman.conf
@@ -74,6 +74,7 @@ echo '[Service]' > $overr_getty1
 echo 'ExecStart=' >> $overr_getty1
 echo 'ExecStart=-/usr/bin/agetty --autologin glados --noclear %I $TERM' >> $overr_getty1
 echo 'TTYVTDisallocate=no' >> $overr_getty1
+echo 'Type=simple' >> $overr_getty
 
 # Add User GLaDOS
 echo 'Usuario GLaDOS (glados)'
