@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit cmake xorg-server xorg-xwininfo xorg-xprop xdg-user-dirs-gtk nvidia firefox chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio mate mate-extra adapta-gtk-theme papirus-icon-theme gtk-engine-murrine compton plank gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu --needed --noconfirm
+sudo pacman -S xorg-xinit cmake xorg-server xorg-xwininfo xorg-xprop xdg-user-dirs-gtk nvidia firefox chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio network-manager-applet mate mate-extra adapta-gtk-theme papirus-icon-theme gtk-engine-murrine compton plank gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu --needed --noconfirm
 
 # Configure Xorg
 head -n -5 /etc/X11/xinit/xinitrc > ~/.xinitrc
