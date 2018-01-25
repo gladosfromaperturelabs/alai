@@ -45,8 +45,8 @@ cd trizen && makepkg -Ccirs --noconfirm --needed
 sudo pacman -S perl-json-xs perl-term-readline-gnu --noconfirm --needed
 
 # Configure SUDO (disable use it without passowrd)
-sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /etc/sudoers.new
-EDITOR='cp /etc/sudoers.new' visudo
+sudo sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /etc/sudoers.new
+EDITOR='cp /etc/sudoers.new' sudo visudo
 rm /etc/sudoers.new
 
 # END 20-firstboot.sh
