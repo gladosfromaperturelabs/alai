@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit xorg-server xorg-xwininfo xorg-xprop xdg-user-dirs-gtk nvidia firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop adapta-gtk-theme papirus-icon-theme gtk-engine-murrine plank gnome-control-center gnome-screen-saver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google nautilus-dropbox gnome-calculator megasync eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch freerdp vinagre vala meson glade --needed --noconfirm
+sudo pacman -S xorg-xinit xorg-server xdg-user-dirs-gtk nvidia firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop adapta-gtk-theme papirus-icon-theme gtk-engine-murrine gtk-engines plank gnome-control-center gnome-screen-saver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google nautilus-dropbox gnome-calculator megasync eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch freerdp vinagre vala lua python-pipenv python2-pipenv python-pip python2-pip python-jedi python2-jedi meson ninja cmake clang gdb valgrind cppcheck glade gedit gedit-plugins libreoffice-fresh libreoffice-fresh-es libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
@@ -49,7 +49,7 @@ sudo modprobe vboxdrv
 # Installing Trizen AUR Helper (pacaur is discontinued)
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
-trizen -S gnome-mpv tilix-bin virtualbox-ext-oracle geany-gtk3 geany-themes geany-plugins-gtk3 --noconfirm --needed --noedit
+trizen -S gnome-mpv tilix-bin virtualbox-ext-oracle geany-gtk3 geany-themes geany-plugins-gtk3 gedit-dark-variant gedit-panel-toggler geany-jedi-complete-gtk3 budgie-screenshot-applet budgie-haste-applet --noconfirm --needed --noedit --noinfo
 
 # Configure SUDO (disable use it without passowrd)
 # sudo sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /tmp/sudoers.new
