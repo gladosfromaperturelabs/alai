@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit cmake xorg-server xorg-xwininfo xorg-xprop xdg-user-dirs-gtk nvidia firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop adapta-gtk-theme papirus-icon-theme gtk-engine-murrine plank gnome-control-center gnome-screen-saver gnome-keyring seahorse openssh dconf-editor file-roller nautilus gvfs-google nautilus-dropbox gnome-calculator megasync eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu hunspell hunspell-es hunspell-en aspell aspell-es aspell-en --needed --noconfirm
+sudo pacman -S xorg-xinit xorg-server xorg-xwininfo xorg-xprop xdg-user-dirs-gtk nvidia firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop adapta-gtk-theme papirus-icon-theme gtk-engine-murrine plank gnome-control-center gnome-screen-saver gnome-keyring seahorse openssh dconf-editor file-roller nautilus gvfs-google nautilus-dropbox gnome-calculator megasync eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl phantomjs rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu hunspell hunspell-es hunspell-en aspell aspell-es aspell-en --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
