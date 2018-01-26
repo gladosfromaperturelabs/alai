@@ -9,7 +9,7 @@ rm /home/glados/.bash_profile && cp /etc/skel/.bash_profile /home/glados
 # Time Internte Sync
 sudo timedatectl set-ntp true
 
-sleep 5;
+sleep 5
 ping -c 5 google.com
 
 # Update/Upgrade/Optimize Pacman DB/PKGs 
@@ -31,6 +31,7 @@ echo 'exec mate-session' >> ~/.xinitrc
 
 echo '#!/bin/sh' > ~/.xserverrc
 echo 'exec /usr/bin/X -nolisten tcp -nolisten local "$@" vt$XDG_VTNR' >> ~/.xserverrc
+
 echo 'if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then' >> ~/.bash_profile
 echo '    exec startx -- -keeptty > ~/.xorg.log 2>&1' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
