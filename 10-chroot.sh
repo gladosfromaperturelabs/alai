@@ -74,7 +74,7 @@ echo '[Service]' > $overr_getty1
 echo 'ExecStart=' >> $overr_getty1
 echo 'ExecStart=-/usr/bin/agetty --autologin glados --noclear %I $TERM' >> $overr_getty1
 echo 'TTYVTDisallocate=no' >> $overr_getty1
-echo 'Type=simple' >> $overr_getty
+echo 'Type=simple' >> $overr_getty1
 
 # Add User GLaDOS
 echo 'Usuario GLaDOS (glados)'
