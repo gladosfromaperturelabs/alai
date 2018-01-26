@@ -57,7 +57,7 @@ echo 'RankMirrors (fatest 10 from the Reflector List)...'
 rankmirrors -n 10 /etc/pacman.d/mirrorlist.reflector > /etc/pacman.d/mirrorlist
 
 # pacstrap system
-pacstrap /mnt base base-devel cmake clang grub efivar efibootmgr networkmanager reflector wget git pigz unrar zip unzip p7zip htop bash-completion
+pacstrap /mnt base base-devel grub efivar efibootmgr networkmanager reflector wget git pigz unrar zip unzip p7zip htop bash-completion
 
 # genfstab by Label
 genfstab -L /mnt >> /mnt/etc/fstab
