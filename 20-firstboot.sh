@@ -57,6 +57,7 @@ trizen -S nautilus-dropbox megasync gnome-mpv tilix-bin virtualbox-ext-oracle ge
 # sudo sed 's/%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/g' /tmp/sudoers.new > /tmp/sudoers.new
 # EDITOR='cp /tmp/sudoers.new' sudo visudo
 
+sudo sync
 sudo systemctl reboot
 
 # END 20-firstboot.sh
