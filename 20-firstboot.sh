@@ -17,11 +17,11 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit xorg-server xdg-user-dirs-gtk nvidia opencl-nvidia ocl-icd firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop arc-solid-gtk-theme adapta-gtk-theme papirus-icon-theme gtk-engine-murrine gtk-engines plank gnome-control-center gnome-screen-saver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google gnome-calculator eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch freerdp vinagre vala lua python-pipenv python2-pipenv python-pip python2-pip python-jedi python2-jedi meson ninja cmake clang gdb valgrind cppcheck glade libreoffice-fresh libreoffice-fresh-es libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es --needed --noconfirm
+sudo pacman -S xorg-xinit xorg-server xdg-user-dirs-gtk nvidia opencl-nvidia ocl-icd firefox geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop arc-solid-gtk-theme adapta-gtk-theme papirus-icon-theme gtk-engine-murrine gtk-engines plank gnome-control-center gnome-screensaver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google gnome-calculator eog eog-plugins evince qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch freerdp vinagre vala lua python-pipenv python2-pipenv python-pip python2-pip python-jedi python2-jedi meson ninja cmake clang gdb valgrind cppcheck glade libreoffice-fresh libreoffice-fresh-es libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
-sudo echo 'QT_QPA_PLATFORMTHEME=qt5ct' >> /etc/environment
+echo 'QT_QPA_PLATFORMTHEME=qt5ct' | sudo tee --append /etc/environment
 
 head -n -5 /etc/X11/xinit/xinitrc > ~/.xinitrc
 echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)' >> ~/.xinitrc
