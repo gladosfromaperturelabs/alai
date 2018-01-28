@@ -57,7 +57,7 @@ trizen -S nautilus-dropbox megasync gnome-mpv tilix-bin virtualbox-ext-oracle ge
 # sudo sed 's/%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NOPASSWD: ALL/g' /tmp/sudoers.new > /tmp/sudoers.new
 # EDITOR='cp /tmp/sudoers.new' sudo visudo
 
-gsettings set org.gnome.desktop.interface gtk-theme "Arc-Darker-solid"
+gsettings set org.gnome.desktop.interface gtk-theme "Arc-solid"
 gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 gsettings set org.gnome.desktop.interface monospace-font-name "Source Code Pro 10"
 gsettings set org.gnome.desktop.interface document-font-name "Noto Sans 10"
