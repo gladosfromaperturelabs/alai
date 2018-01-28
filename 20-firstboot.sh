@@ -50,7 +50,7 @@ sudo modprobe vboxdrv
 # Installing Trizen AUR Helper (pacaur is discontinued)
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
-trizen -S nautilus-dropbox megasync gnome-mpv tilix-bin virtualbox-ext-oracle geany-gtk3 geany-plugins-gtk3 geany-jedi-complete-gtk3  --noconfirm --needed --noedit --noinfo
+trizen -S nautilus-dropbox megasync gnome-mpv tilix-bin virtualbox-ext-oracle geany-gtk3 geany-plugins-gtk3 geany-jedi-complete-gtk3 --noconfirm --needed --noedit --noinfo --movepkg
 
 # Configure SUDO (disable use it without passowrd)
 # sudo sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /tmp/sudoers.new
