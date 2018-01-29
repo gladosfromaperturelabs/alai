@@ -62,6 +62,8 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 
 # Configure makepkg.conf
+sed -i 's/CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"/CFLAGS="-march=bdver2 -O2 -pipe -fstack-protector-strong -fno-plt"/g' /etc/makepkg.conf
+sed -i 's/CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"/CXXFLAGS="-march=bdver2 -O2 -pipe -fstack-protector-strong -fno-plt"/g' /etc/makepkg.conf
 sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/g' /etc/makepkg.conf
 sed -i 's/COMPRESSGZ=(gzip -c -f -n)/COMPRESSGZ=(pigz -c -f -n)/g' /etc/makepkg.conf
 sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z - --threads=0)/g' /etc/makepkg.conf
@@ -73,7 +75,7 @@ sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="nomodes
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # FIX for VirtualBox UEFI mode
-echo '\EFI\arch-grub\grubx64.efi' > /boot/startup.nsh
+# echo '\EFI\arch-grub\grubx64.efi' > /boot/startup.nsh
 
 # Configure Automatic User Login and keep boot messages
 mkdir /etc/systemd/system/getty@tty1.service.d/
