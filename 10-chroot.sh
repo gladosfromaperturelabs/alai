@@ -28,6 +28,9 @@ echo 'blacklist sp5100_tco' > /etc/modprobe.d/sp5100tco-blacklist.conf
 echo 'blacklist nouveau' > /etc/modprobe.d/nouveau-blacklist.conf
 echo 'options nouveau modeset=0' >> /etc/modprobe.d/nouveau-blacklist.conf
 
+echo 'blacklist kvm' > /etc/modprobe.d/kvm-blacklist.conf
+echo 'blacklist kvm_amd' >> /etc/modprobe.d/kvm-blacklist.conf
+
 # Disable SystemD Journal Logs on disk
 rm -R /var/log/journal
 
