@@ -71,7 +71,7 @@ sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z - --threads=0)/g' /etc/ma
 # BootLoader GRUB with Custom resolution (FIX for NVIDIA booting in HiRes)
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch-grub
 sed -i 's/GRUB_GFXMODE=auto/GRUB_GFXMODE=1920x1080-24/g' /etc/default/grub
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="nomodeset"/g' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet nomodeset"/g' /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # FIX for VirtualBox UEFI mode
