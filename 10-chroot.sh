@@ -39,6 +39,11 @@ mkdir /etc/systemd/coredump.conf.d/
 echo '[Coredump]' >> /etc/systemd/coredump.conf.d/custom.conf
 echo 'Storage=none' >> /etc/systemd/coredump.conf.d/custom.conf
 
+# Change I/O scheduler, SSD by deadline, HDD bfq
+echo 'ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"' > /etc/udev/rules.d/60-ioschedulers.rules
+echo 'ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"' >> /etc/udev/rules.d/60-ioschedulers.rules
+
+
 # Set Nano as default console text editor
 echo 'EDITOR=nano' >> /etc/environment
 
