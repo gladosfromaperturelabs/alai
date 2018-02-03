@@ -44,18 +44,18 @@ git config --global user.email "gladosfromaperturelabs@gmail.com"
 git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 # VirtualBox
-#sudo usermod -aG vboxusers glados
-#sudo modprobe vboxdrv
+sudo usermod -aG vboxusers glados
+sudo modprobe vboxdrv
 
 # Installing Trizen AUR Helper (pacaur is discontinued)
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
 gpg --keyserver pool.sks-keyservers.net --recv-keys 702353E0F7E48EDB 
-trizen -S megasync gnome-mpv tilix-bin geany-gtk3 geany-plugins-gtk3 geany-jedi-complete-gtk3 vmware-workstation --noconfirm --needed --noedit --noinfo
+trizen -S megasync gnome-mpv tilix-bin geany-gtk3 geany-plugins-gtk3 geany-jedi-complete-gtk3 virtualbox-ext-oracle --noconfirm --needed --noedit --noinfo
 
-sudo systemctl enable vmware-networks.service
-sudo systemctl enable vmware-usbarbitrator.service
-sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn AG352-4YED3-0852Q-LPXXT-MGKG4
+#sudo systemctl enable vmware-networks.service
+#sudo systemctl enable vmware-usbarbitrator.service
+#sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn AG352-4YED3-0852Q-LPXXT-MGKG4
 
 # Configure SUDO (disable use it without passowrd)
 # sudo sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /tmp/sudoers.new
