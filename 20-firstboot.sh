@@ -51,7 +51,7 @@ sudo modprobe vboxdrv
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
 #gpg --keyserver pool.sks-keyservers.net --recv-keys 702353E0F7E48EDB 
-trizen -S megasync gnome-mpv tilix-bin virtualbox-ext-oracle code--noconfirm --needed --noedit --noinfo
+trizen -S megasync gnome-mpv tilix-bin virtualbox-ext-oracle --noconfirm --needed --noedit --noinfo
 
 #sudo systemctl enable vmware-networks.service
 #sudo systemctl enable vmware-usbarbitrator.service
