@@ -24,10 +24,10 @@ sudo localectl set-x11-keymap es 105
 #echo 'QT_QPA_PLATFORMTHEME=qt5ct' | sudo tee --append /etc/environment
 
 head -n -5 /etc/X11/xinit/xinitrc > ~/.xinitrc
-echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)' >> ~/.xinitrc
-echo 'export SSH_AUTH_SOCK' >> ~/.xinitrc
-echo 'export XDG_CURRENT_DESKTOP=Budgie:GNOME' >> ~/.xinitrc
-echo 'exec budgie-desktop' >> ~/.xinitrc
+#echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)' >> ~/.xinitrc
+#echo 'export SSH_AUTH_SOCK' >> ~/.xinitrc
+#echo 'export XDG_CURRENT_DESKTOP=Budgie:GNOME' >> ~/.xinitrc
+echo 'exec startkde' >> ~/.xinitrc
 
 echo '#!/bin/sh' > ~/.xserverrc
 echo 'exec /usr/bin/X -nolisten tcp -nolisten local "$@" vt$XDG_VTNR' >> ~/.xserverrc
