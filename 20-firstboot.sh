@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S network-manager-applet xorg-xinit xorg-server xdg-user-dirs-gtk nvidia opencl-nvidia ocl-icd firefox hexchat geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop arc-solid-gtk-theme adapta-gtk-theme papirus-icon-theme gtk-engine-murrine gtk-engines plank gnome-control-center gnome-screensaver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google gnome-calculator eog eog-plugins evince rhythmbox qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch python-nautilus libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers --needed --noconfirm
+sudo pacman -S network-manager-applet xorg-xinit xorg-server xdg-user-dirs-gtk nvidia opencl-nvidia ocl-icd lib32-nvidia-utils  lib32-opencl-driver lib32-ocl-icd firefox hexchat geary chromium firefox-i18n-es-es perl-json-xs perl-term-readline-gnu pulseaudio budgie-desktop arc-solid-gtk-theme adapta-gtk-theme papirus-icon-theme gtk-engine-murrine gtk-engines plank gnome-control-center gnome-screensaver gnome-keyring seahorse openssh libsecret dconf-editor file-roller nautilus gvfs-google gnome-calculator eog eog-plugins evince rhythmbox qt5-base qt5ct kvantum-qt5 qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch python-nautilus libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
@@ -51,7 +51,7 @@ sudo modprobe vboxdrv
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
 #gpg --keyserver pool.sks-keyservers.net --recv-keys 702353E0F7E48EDB 
-trizen -S megasync gnome-mpv tilix-bin virtualbox-ext-oracle --noconfirm --needed --noedit --noinfo
+trizen -S megasync gnome-mpv tilix-bin virtualbox-ext-oracle visual-studio-code-bin --noconfirm --needed --noedit --noinfo
 
 #sudo systemctl enable vmware-networks.service
 #sudo systemctl enable vmware-usbarbitrator.service
