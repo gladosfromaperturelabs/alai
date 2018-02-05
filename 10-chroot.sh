@@ -54,6 +54,9 @@ echo '/.swapfile none swap defaults 0 0' >> /etc/fstab
 # Set Nano as default console text editor
 echo 'EDITOR=nano' >> /etc/environment
 
+# Plasma/Kwin nVidia FIX
+echo 'KWIN_TRIPLE_BUFFER=1' >> /etc/environment
+
 # Configure SUDO
 sed 's/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g' /etc/sudoers > /tmp/sudoers.new
 EDITOR='cp /tmp/sudoers.new' visudo
