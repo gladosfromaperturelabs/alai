@@ -53,13 +53,8 @@ EDITOR='cp /tmp/sudoers.new' visudo
 
 
 # Configure Pacman
-sed -i 's/#Color/Color/g' /etc/pacman.conf
-sed -i 's/#TotalDownload/TotalDownload/g' /etc/pacman.conf
-sed -i 's/#VerbosePkgLists/VerbosePkgLists/g' /etc/pacman.conf
-
-# Enable Multilib Pacman Repo
-echo '[multilib]' >> /etc/pacman.conf
-echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
+mv /etc/pacman.conf /etc/pacman.conf.bak
+cp /alai-scripts/pacman.conf /etc/pacman.conf
 
 # Configure makepkg.conf
 sed -i 's/CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"/CFLAGS="-march=bdver2 -O2 -pipe -fstack-protector-strong -fno-plt"/g' /etc/makepkg.conf
