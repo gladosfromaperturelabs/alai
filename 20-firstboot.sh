@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts noto-fonts noto-fonts-emoji ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch python-nautilus libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers --needed --noconfirm
+sudo pacman -S xorg-xinit xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers plasma-desktop plasma-nm plasma-pa dolphin konsole kate okular gwenview qt5-imageformats kipi-plugins kimageformats discount ebook-tools spectacle kcalc ksshaskpass kwalletmanager kwallet--needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
