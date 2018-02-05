@@ -9,7 +9,7 @@ hwclock --systohc --utc
 echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
 echo 'es_ES.UTF-8 UTF-8' >> /etc/locale.gen
 locale-gen
-echo 'LANG=en_US.UTF-8' > /etc/locale.conf
+echo 'LANG=es_ES.UTF-8' > /etc/locale.conf
 echo 'KEYMAP=es' > /etc/vconsole.conf
 
 # Host
