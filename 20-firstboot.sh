@@ -17,16 +17,12 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump ttf-hack adobe-source-code-pro-fonts ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers plasma-desktop plasma-nm plasma-pa dolphin konsole kate okular gwenview qt5-imageformats kipi-plugins kimageformats discount ebook-tools spectacle kcalc ksshaskpass kwalletmanager kwallet--needed --noconfirm
+sudo pacman -S xorg-xinit xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump qmms ttf-hack adobe-source-code-pro-fonts ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers plasma-desktop plasma-nm plasma-pa dolphin kde-gtk-config breeze-gtk konsole kate okular gwenview qt5-imageformats kipi-plugins kimageformats discount ebook-tools spectacle kcalc ksshaskpass kwalletmanager kwallet ark megasync qupzilla lazarus lazarus-qt5 qtcreator cmake extra-cmake-modules meson ninja llvm clang jdk9-openjdk jre9-openjdk python2-pip python-pip jsoncpp cppcheck valgrind --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
-#echo 'QT_QPA_PLATFORMTHEME=qt5ct' | sudo tee --append /etc/environment
 
 head -n -5 /etc/X11/xinit/xinitrc > ~/.xinitrc
-#echo 'eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)' >> ~/.xinitrc
-#echo 'export SSH_AUTH_SOCK' >> ~/.xinitrc
-#echo 'export XDG_CURRENT_DESKTOP=Budgie:GNOME' >> ~/.xinitrc
 echo 'exec startkde' >> ~/.xinitrc
 
 echo '#!/bin/sh' > ~/.xserverrc
