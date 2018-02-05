@@ -66,7 +66,7 @@ cp /alai-scripts/pacman.conf /etc/pacman.conf
 # Configure makepkg.conf
 sed -i 's/CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"/CFLAGS="-march=bdver2 -O2 -pipe -fstack-protector-strong -fno-plt"/g' /etc/makepkg.conf
 sed -i 's/CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe -fstack-protector-strong -fno-plt"/CXXFLAGS="-march=bdver2 -O2 -pipe -fstack-protector-strong -fno-plt"/g' /etc/makepkg.conf
-sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j$(nproc)"/g' /etc/makepkg.conf
+sed -i 's/#MAKEFLAGS="-j2"/MAKEFLAGS="-j7"/g' /etc/makepkg.conf
 sed -i 's/COMPRESSGZ=(gzip -c -f -n)/COMPRESSGZ=(pigz -c -f -n)/g' /etc/makepkg.conf
 sed -i 's/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z - --threads=0)/g' /etc/makepkg.conf
 
