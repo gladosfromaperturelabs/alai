@@ -43,6 +43,13 @@ echo 'Storage=none' >> /etc/systemd/coredump.conf.d/custom.conf
 echo 'ACTION=="add|change", KERNEL=="sd[a-z]|mmcblk[0-9]*", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="deadline"' > /etc/udev/rules.d/60-ioschedulers.rules
 echo 'ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"' >> /etc/udev/rules.d/60-ioschedulers.rules
 
+# Create Swap File
+fallocate -l 20G /.swapfile
+chmod 600 /.swapfile
+mkswap /.swapfile
+swapon /.swapfile
+echo '# 20G SWAP File in root /' >> /etc/fstab
+echo '/.swapfile none swap defaults 0 0' >> /etc/fstab
 
 # Set Nano as default console text editor
 echo 'EDITOR=nano' >> /etc/environment
