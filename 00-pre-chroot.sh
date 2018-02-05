@@ -44,13 +44,14 @@ mount -o discard,noatime $diskpath$partid_archroot /mnt
 mkdir /mnt/boot
 mount -o discard,noatime $diskpath$partid_archboot /mnt/boot
 
-pacman -Syy
-pacman -S reflector unzip --noconfirm
+curl -L -o reflector.pkg.tar.xz https://www.archlinux.org/packages/community/any/reflector/download/ 
+curl -L -o unzip.pkg.tar.xz https://www.archlinux.org/packages/extra/x86_64/unzip/download/
+pacman -U reflector.pkg.tar.xz unzip.pkg.tar.xz --noconfirm
 
 # Updating and Ranking Pacman MirrorList.
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
-echo 'Reflector FR,DE,ES (--age 12 --latest 50 --sort rate )...'
+echo 'Reflector FR,DE,ES (--age 12 --latest 50 --sort rate --protocol https)...'
 reflector --age 12 --latest 50 --sort rate --protocol https -c FR -c DE -c ES --save /etc/pacman.d/mirrorlist.reflector
 
 echo 'RankMirrors (fatest 10 from the Reflector List)...'
