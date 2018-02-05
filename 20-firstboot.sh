@@ -32,6 +32,8 @@ echo 'if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then' >> ~/.bash_profile
 echo '    exec startx -- -keeptty > ~/.xorg.log 2>&1' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
+cp /alai-scripts/plasma-5-noshadow.sh /home/glados/.config/autostart-scripts/
+
 sudo systemctl enable nvidia-persistenced
 
 # git
