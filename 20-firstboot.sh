@@ -33,6 +33,8 @@ echo '    exec startx -- -keeptty > ~/.xorg.log 2>&1' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
 cp /alai-scripts/plasma-5-noshadow.sh /home/glados/.config/autostart-scripts/
+chmod +x /home/glados/.config/autostart-scripts/plasma-5-noshadow.sh
+
 
 sudo systemctl enable nvidia-persistenced
 
