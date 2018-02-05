@@ -17,7 +17,7 @@ sudo pacman -Syyu
 sudo pacman-optimize
 
 # Install Basic Mate Desktop and Apps
-sudo pacman -S xorg-xinit xorg-xwininfo xorg-xprop xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo mpv youtube-dl rtmpdump qmms ttf-hack adobe-source-code-pro-fonts ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers plasma-desktop plasma-nm plasma-pa dolphin kde-gtk-config breeze-gtk konsole kate okular gwenview qt5-translations qt5-imageformats kipi-plugins kimageformats discount ebook-tools spectacle kcalc ksshaskpass kwalletmanager kwallet ark megasync qupzilla lazarus lazarus-qt5 qtcreator cmake extra-cmake-modules meson ninja llvm clang jdk9-openjdk jre9-openjdk python2 python2-pip python-pip jsoncpp cppcheck valgrind openmp gdb ntfs-3g exfat-utils rust go lua lua51 lua52 libreoffice-fresh libreoffice-fresh-es --needed --noconfirm
+sudo pacman -S xorg-xinit xorg-xwininfo xorg-xprop xorg-server xdg-user-dirs nvidia opencl-nvidia ocl-icd lib32-nvidia-utils lib32-opencl-nvidia lib32-ocl-icd firefox perl-json-xs perl-term-readline-gnu pulseaudio qbittorrent gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-ugly gst-plugins-bad gst-libav libva-vdpau-driver libva-utils vdpauinfo cantata mps-youtube mpv youtube-dl rtmpdump qmmp ttf-hack adobe-source-code-pro-fonts ttf-dejavu ttf-liberation hunspell hunspell-es hunspell-en aspell aspell-es aspell-en wine winetricks virtualbox virtualbox-host-modules-arch libmythes mythes-en mythes-es hyphen hyphen-en hyphen-es linux-headers plasma-desktop plasma-nm plasma-pa dolphin kde-gtk-config breeze-gtk konsole kate okular gwenview qt5-translations qt5-imageformats kipi-plugins kimageformats discount ebook-tools spectacle kcalc ksshaskpass kwalletmanager kwallet ark megasync qupzilla lazarus lazarus-qt5 qtcreator cmake extra-cmake-modules meson ninja llvm clang jdk9-openjdk jre9-openjdk python2 python2-pip python-pip jsoncpp cppcheck valgrind openmp gdb ntfs-3g exfat-utils rust go lua lua51 lua52 libreoffice-fresh libreoffice-fresh-es --needed --noconfirm
 
 # Configure Xorg
 sudo localectl set-x11-keymap es 105
@@ -35,7 +35,8 @@ echo 'fi' >> ~/.bash_profile
 cp /alai-scripts/plasma-5-noshadow.sh /home/glados/.config/autostart-scripts/
 chmod +x /home/glados/.config/autostart-scripts/plasma-5-noshadow.sh
 
-
+# nVidia Xorg config file with fixes for plasma
+sudo cp /alai-scripts/20-nvidia.conf /etc/X11/xorg.conf.d/20-nvidia.conf
 sudo systemctl enable nvidia-persistenced
 
 # git
@@ -51,14 +52,7 @@ sudo modprobe vboxdrv
 mkdir /tmp/trizen && cd /tmp/trizen && git clone https://aur.archlinux.org/trizen.git
 cd trizen && makepkg -Ccirs --noconfirm --needed
 cp /alai-scripts/trizen.conf /home/glados/.config/trizen/
-
-
-#gpg --keyserver pool.sks-keyservers.net --recv-keys 702353E0F7E48EDB 
 trizen -S virtualbox-ext-oracle visual-studio-code-bin --noconfirm --needed --noedit --noinfo
-
-#sudo systemctl enable vmware-networks.service
-#sudo systemctl enable vmware-usbarbitrator.service
-#sudo /usr/lib/vmware/bin/vmware-vmx-debug --new-sn AG352-4YED3-0852Q-LPXXT-MGKG4
 
 # Configure SUDO (disable use it without passowrd)
 # sudo sed 's/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/g' /etc/sudoers > /tmp/sudoers.new
