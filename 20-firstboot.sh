@@ -28,9 +28,9 @@ echo 'exec startkde' >> ~/.xinitrc
 echo '#!/bin/sh' > ~/.xserverrc
 echo 'exec /usr/bin/X -nolisten tcp -nolisten local "$@" vt$XDG_VTNR' >> ~/.xserverrc
 
-echo '#if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then' >> ~/.bash_profile
-echo '#    exec startx -- -keeptty > ~/.xorg.log 2>&1' >> ~/.bash_profile
-echo '#fi' >> ~/.bash_profile
+echo 'if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then' >> ~/.bash_profile
+echo '    exec startx -- -keeptty > ~/.xorg.log 2>&1' >> ~/.bash_profile
+echo 'fi' >> ~/.bash_profile
 
 sudo systemctl enable nvidia-persistenced
 
@@ -66,6 +66,6 @@ cd trizen && makepkg -Ccirs --noconfirm --needed
 #gsettings set org.gnome.desktop.wm.preferences titlebar-font "Noto Sans 10"
 
 sudo sync
-#sudo systemctl reboot
+sudo systemctl reboot
 
 # END 20-firstboot.sh
